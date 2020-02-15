@@ -1,0 +1,44 @@
+@import '../styles.scss';
+
+.unfoldMenu {
+    height: 100vh;
+    transition: 0.5s;
+}
+
+.foldMenu {
+    height: 0vh;
+    visibility: hidden;
+}
+
+.overlay-content {
+    position: absolute;
+    text-align: center;
+}
+
+.hamburger-menu-background {
+    height: 100%;
+    width: 100%;
+    opacity: 30%;
+}
+
+.menu-text {
+    position: absolute;
+    top: 2vh;
+    left: 15vw;
+}
+
+.overlay-content a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: black;
+    display: block; /* Display block instead of inline */
+  }
+
+.overlay-content a:hover, a:focus {
+    color: #f1f1f1;
+  }
+
+  .active {
+      font-weight: bold;
+  }

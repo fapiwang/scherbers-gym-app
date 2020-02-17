@@ -12,4 +12,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  routerWhatsapp() {
+    document.location.href = 'https://api.whatsapp.com/send?phone=4917657937429';
+  }
+
 }

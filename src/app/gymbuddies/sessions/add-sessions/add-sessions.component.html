@@ -1,0 +1,28 @@
+<div class="container">
+  <h6>Erstelle eine neue Session mit deinen Gymbuddies!</h6>
+
+  <mat-form-field>
+    <mat-label>Wähle ein Datum</mat-label>
+    <input matInput [matDatepicker]="picker" (dateChange)="onDateChange($event.value)" (click)="picker.open()">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker (dateChange)="onDateChange($event.value)"></mat-datepicker>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>Uhrzeit</mat-label>
+    <input matInput [(ngModel)]="selectedTime">
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>Ort</mat-label>
+    <mat-select (selectionChange)="changePlace($event.value)">
+      <mat-option *ngFor="let place of places" [value]="place.id">
+        {{place.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <button type="button" class="btn btn-save bg-dark" (click)="createSession()" routerLink="../../" routerLinkActive="active" routerLinkActiveOptions="{exact: true}">Speichern</button>
+
+</div>
+

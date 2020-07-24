@@ -1,6 +1,5 @@
 <div class="container">
-<!-- <app-add-sessions *ngFor="let session of sessions" [sessions]="sessions"></app-add-sessions>
- --></div>
-
-
-
+  <app-add-sessions *ngFor="let session of sessions" [sessions]="session">{{
+    session.date
+  }}</app-add-sessions>
+</div>

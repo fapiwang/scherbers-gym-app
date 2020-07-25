@@ -1,0 +1,29 @@
+@import "../../../styles.scss";
+
+.card {
+  height: fit-content;
+  overflow: hidden;
+  margin: 0 10vw 5vh 10vw;
+}
+
+.row {
+  align-items: center;
+}
+
+h6 {
+  margin: 2vh 0 1vh 3vw;
+}
+
+.mat-form-field {
+  width: 60px;
+  margin: 2vh 0 1vh 3vw;
+}
+
+.row-3 {
+  text-align: center;
+}
+
+.btn-save {
+  color: #fff;
+  width: 99%;
+}

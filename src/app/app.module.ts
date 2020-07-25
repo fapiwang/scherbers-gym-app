@@ -19,6 +19,7 @@ import { MerchandiseComponent } from './merchandise/merchandise.component';
 import { SessionsComponent } from './gymbuddies/sessions/sessions.component';
 import { AddSessionsComponent } from './gymbuddies/sessions/add-sessions/add-sessions.component';
 import { EditSessionsComponent } from './gymbuddies/sessions/edit-sessions/edit-sessions.component';
+import { MerchArticlesComponent } from './merchandise/merch-articles/merch-articles.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { EditSessionsComponent } from './gymbuddies/sessions/edit-sessions/edit-
     SessionsComponent,
     AddSessionsComponent,
     EditSessionsComponent,
+    MerchArticlesComponent,
   ],
   imports: [
     BrowserModule,

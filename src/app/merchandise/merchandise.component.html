@@ -1,3 +1,23 @@
-<h6>Hier gibt's den heißesten Scheiß vom Merchandise!</h6>
+<h6 *ngIf="!orderMode">Hier gibt's den heißesten Scheiß vom Merchandise!</h6>
 
-<app-merch-articles></app-merch-articles>
+<div *ngIf="orderMode" class="container">
+  <h6>Deine Bestellung</h6>
+  <p>Du möchtest Artikel X in Größe {{ selectedSize }} bestellen?</p>
+  <p>
+    Dann überweise Z Euro mit dem Verwendungszweck "Vorname Nachname, X, Y" an
+    das folgende Konto und gib' über den Button unten deine Bestellung ab.
+  </p>
+  <p>Empfänger: Rico Battefeld</p>
+  <p>BIC: GENODEF1KBW</p>
+  <p>IBAN: DE123456789</p>
+  <div class="btn-container">
+    <button type="button" class="btn btn-save bg-dark" (click)="createOrder()">
+      Bestellung abschicken
+    </button>
+  </div>
+</div>
+
+<app-merch-articles
+  *ngIf="!orderMode"
+  (orderSize)="onOrderSize($event)"
+></app-merch-articles>

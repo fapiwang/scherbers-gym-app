@@ -1,61 +1,39 @@
-<div class="card shadow-sm">
-  <div class="row">
-    <img src="../../../assets/hoody.png" />
-  </div>
-  <div class="row">
-    <div class="col">
-      <h6>{{ merchArticles[0].viewValue }}</h6>
+<div
+  class="col card-group"
+  *ngFor="let merchArticle of merchArticles; index as i"
+  (click)="getIndex(i)"
+>
+  <div class="card shadow-sm">
+    <div class="row">
+      <img [src]="[articleImages[i]]" />
     </div>
-    <div class="col">
-      <h6>45€</h6>
+    <div class="row">
+      <div class="col">
+        <h6>{{ merchArticles[i] }}</h6>
+      </div>
+      <div class="col">
+        <h6>{{ prices[i] }}</h6>
+      </div>
+      <div class="col">
+        <mat-form-field>
+          <mat-label>Size</mat-label>
+          <mat-select (selectionChange)="changeSize($event.value)">
+            <mat-option *ngFor="let size of sizes" [value]="size.id">
+              {{ size.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
     </div>
-    <div class="col">
-      <mat-form-field>
-        <mat-label>Size</mat-label>
-        <mat-select (selectionChange)="changeSize($event.value)">
-          <mat-option *ngFor="let size of sizes" [value]="size.id">
-            {{ size.viewValue }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+    <div class="row-3">
+      <button
+        type="button"
+        class="btn btn-save bg-dark"
+        [disabled]="!validInput[i]"
+        (click)="goToOrder()"
+      >
+        I want this piece
+      </button>
     </div>
-  </div>
-  <div class="row-3">
-    <button
-      type="button"
-      class="btn btn-save bg-dark"
-      [disabled]="!validInput"
-      (click)="goToOrder()"
-    >
-      I want this piece
-    </button>
-  </div>
-</div>
-<div class="card shadow-sm">
-  <div class="row">
-    <img src="../../../assets/cap.png" />
-  </div>
-  <div class="row">
-    <div class="col">
-      <h6>{{ merchArticles[1].viewValue }}</h6>
-    </div>
-    <div class="col">
-      <h6>25€</h6>
-    </div>
-    <div class="col">
-      <mat-form-field>
-        <mat-label>Size</mat-label>
-        <mat-select (selectionChange)="changeSize($event.value)">
-          <mat-option *ngFor="let size of sizes" [value]="size.id">
-            {{ size.viewValue }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="row-3">
-    <button type="button" class="btn btn-save bg-dark">
-      I want this piece
-    </button>
   </div>
 </div>

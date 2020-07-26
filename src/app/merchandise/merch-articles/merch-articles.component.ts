@@ -1,9 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from "@angular/core";
-
-interface MerchArticles {
-  id: string;
-  viewValue: string;
-}
+import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
 
 interface Sizes {
   id: string;
@@ -18,9 +13,12 @@ interface Sizes {
 export class MerchArticlesComponent implements OnInit {
   @Output() orderSize: EventEmitter<any> = new EventEmitter();
 
-  merchArticles: MerchArticles[] = [
-    { id: "hoody", viewValue: "Hoody" },
-    { id: "cap", viewValue: "Cap" },
+  merchArticles: string[] = ["Hoody", "Cap"];
+  prices: string[] = ["45€", "25€"];
+
+  articleImages: string[] = [
+    "../../../assets/hoody.png",
+    "../../../assets/cap.png",
   ];
 
   sizes: Sizes[] = [
@@ -32,10 +30,15 @@ export class MerchArticlesComponent implements OnInit {
 
   selectedSize = "";
   selectedArticle = "";
-  validInput = false;
+  validInput: boolean[] = new Array(this.articleImages.length);
+  articleIndex: number;
 
   onDateChange(data) {
     this.selectedSize = data;
+  }
+
+  getIndex(i) {
+    this.articleIndex = i;
   }
 
   changeSize(data) {
@@ -51,8 +54,8 @@ export class MerchArticlesComponent implements OnInit {
     if (data === "xl") {
       this.selectedSize = "XL";
     }
-    if (this.selectedSize != null) {
-      this.validInput = true;
+    if (this.selectedSize != "") {
+      this.validInput[this.articleIndex] = true;
     }
   }
 

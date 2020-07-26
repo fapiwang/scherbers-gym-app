@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 
 interface MerchArticles {
   id: string;
@@ -16,6 +16,8 @@ interface Sizes {
   styleUrls: ["./merch-articles.component.scss"],
 })
 export class MerchArticlesComponent implements OnInit {
+  @Output() orderSize: EventEmitter<any> = new EventEmitter();
+
   merchArticles: MerchArticles[] = [
     { id: "hoody", viewValue: "Hoody" },
     { id: "cap", viewValue: "Cap" },
@@ -54,7 +56,9 @@ export class MerchArticlesComponent implements OnInit {
     }
   }
 
-  createOrder(selectedSize, selectedArticle) {}
+  goToOrder() {
+    this.orderSize.emit(this.selectedSize);
+  }
 
   constructor() {}
 

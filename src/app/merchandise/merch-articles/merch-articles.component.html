@@ -21,7 +21,12 @@
     </div>
   </div>
   <div class="row-3">
-    <button type="button" class="btn btn-save bg-dark" [disabled]="!validInput">
+    <button
+      type="button"
+      class="btn btn-save bg-dark"
+      [disabled]="!validInput"
+      (click)="goToOrder()"
+    >
       I want this piece
     </button>
   </div>

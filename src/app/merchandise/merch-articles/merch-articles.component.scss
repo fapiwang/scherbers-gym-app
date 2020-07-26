@@ -8,6 +8,8 @@
 
 .row {
   align-items: center;
+  max-height: 300px;
+  overflow: hidden;
 }
 
 h6 {
@@ -25,5 +27,5 @@ h6 {
 
 .btn-save {
   color: #fff;
-  width: 99%;
+  width: 100%;
 }

@@ -13,12 +13,13 @@ interface Sizes {
 export class MerchArticlesComponent implements OnInit {
   @Output() orderSize: EventEmitter<any> = new EventEmitter();
 
-  merchArticles: string[] = ["Hoody", "Cap"];
-  prices: string[] = ["45€", "25€"];
+  merchArticles: string[] = ["Hoody", "Cap", "Shirt"];
+  prices: string[] = ["45€", "25€", "30€"];
 
   articleImages: string[] = [
     "../../../assets/hoody.png",
     "../../../assets/cap.png",
+    "../../../assets/shirt.png",
   ];
 
   sizes: Sizes[] = [

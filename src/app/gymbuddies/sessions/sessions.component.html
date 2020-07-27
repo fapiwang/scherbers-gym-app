@@ -1,6 +1,24 @@
-<div class="container">
-<!-- <app-add-sessions *ngFor="let session of sessions" [sessions]="sessions"></app-add-sessions>
- --></div>
+<div class="container" *ngIf="!unfoldAddSession">
+  <button type="button" class="btn btn-add bg-dark" (click)="addSession()">
+    Neue Session erstellen
+    <fa-icon [icon]="faPlusCircle" class="faPlusCircle"></fa-icon>
+  </button>
+  <h6>Hier findest du anstehende Trainingssessions.</h6>
+  <p>Lass deine Gymbuddies wissen, dass du an einer Session teilnimmst!</p>
+</div>
+<app-add-sessions
+  *ngIf="unfoldAddSession"
+  (displaySessions)="getSessions($event)"
+></app-add-sessions>
 
-
-
+<div class="card-container" *ngIf="sessionsExist && !unfoldAddSession">
+  <div class="col card-group" *ngFor="let session of sessions; index as i">
+    <div class="card shadow-sm bg-dark">
+      <div class="row">
+        <div class="col">{{ sessions[i].date }}</div>
+        <div class="col">{{ sessions[i].time }}</div>
+        <div class="col-5">{{ sessions[i].place }}</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -12,7 +12,7 @@ interface Place {
   styleUrls: ["./add-sessions.component.scss"],
 })
 export class AddSessionsComponent implements OnInit {
-  @Output() displaySessions: EventEmitter<any> = new EventEmitter();
+  @Output() pushSession: EventEmitter<any> = new EventEmitter();
 
   places: Place[] = [
     { id: "gym-0", viewValue: "Gym" },
@@ -62,9 +62,8 @@ export class AddSessionsComponent implements OnInit {
         this.selectedTime,
         this.selectedPlace
       );
-      this.sessions.push(this.newSession);
       this.correctSession = true;
-      this.displaySessions.emit(this.sessions);
+      this.pushSession.emit(this.newSession);
     }
   }
 

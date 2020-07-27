@@ -20,11 +20,18 @@ export class SessionsComponent implements OnInit {
   }
 
   getSessions(event) {
-    for (let i = 0; i < event.length; i++) {
-      this.sessions[i] = event[i];
-    }
+    this.sessions.push(event);
+    this.sessions.sort(this.sortSessionsByDate);
     this.unfoldAddSession = false;
     this.sessionsExist = true;
+  }
+
+  sortSessionsByDate(a, b) {
+    if (a.date < b.date) return -1;
+    else if (a.date > b.date) return 1;
+    else if (a.date == b.date && a.time < b.time) return -1;
+    else if (a.date == b.date && a.time > b.time) return 1;
+    else return 0;
   }
 
   constructor() {}

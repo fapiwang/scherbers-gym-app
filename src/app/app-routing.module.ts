@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: "gymbuddies", component: GymbuddiesComponent },
   { path: "plans", component: PlansComponent },
   { path: "merchandise", component: MerchandiseComponent },
+  { path: "gymbuddies", component: GymbuddiesComponent },
   { path: "gymbuddies/sessions", component: SessionsComponent },
   { path: "gymbuddies/sessions/add-sessions", component: AddSessionsComponent },
   {

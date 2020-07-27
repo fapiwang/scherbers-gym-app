@@ -1,7 +1,8 @@
-@import '../../../../styles.scss';
+@import "../../../../styles.scss";
 
 .container {
   text-align: center;
+  padding: 3vh 3vw 3vh 3vw;
 }
 
 .btn-save {
@@ -14,4 +15,3 @@ mat-form-field {
   width: calc(100% - 2rem);
   min-width: 180px;
 }
-  

@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from "@angular/core";
 import { Session } from "./session.model";
 
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: "app-sessions",
@@ -11,9 +13,12 @@ import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 export class SessionsComponent implements OnInit {
   sessions: Session[] = [];
   faPlusCircle = faPlusCircle;
+  faAngleDown = faAngleDown;
+  faAngleUp = faAngleUp;
 
   unfoldAddSession: boolean = false;
   sessionsExist: boolean = false;
+  cardUnfolded: boolean[] = new Array(this.sessions.length);
 
   addSession() {
     this.unfoldAddSession = true;
@@ -24,6 +29,7 @@ export class SessionsComponent implements OnInit {
     this.sessions.sort(this.sortSessionsByDate);
     this.unfoldAddSession = false;
     this.sessionsExist = true;
+    this.cardUnfolded.push(false);
   }
 
   sortSessionsByDate(a, b) {

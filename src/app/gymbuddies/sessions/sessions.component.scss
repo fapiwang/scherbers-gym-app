@@ -4,7 +4,16 @@
   padding: 3vh 3vw 3vh 5vw;
 }
 
+.card {
+  align-items: center;
+}
+
 .btn-add {
+  color: #fff;
+}
+
+.btn-collapse {
+  border: none;
   color: #fff;
 }
 
@@ -19,5 +28,28 @@ h6 {
 .row {
   color: #fff;
   width: 100%;
-  padding: 1vh 0 1vh 1vw;
+  padding: 1vh 0 0 0;
+  text-align: center;
+}
+
+.upper {
+  align-items: center;
+  text-align: left;
+  margin: 0 0 1vh 0;
+}
+
+.right {
+  text-align: right;
+}
+
+.card-image {
+  position: relative;
+  text-align: center;
+  opacity: 20%;
+}
+
+.card-text {
+  position: absolute;
+  top: 20%;
+  left: 10%;
 }

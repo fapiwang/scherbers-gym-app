@@ -14,10 +14,47 @@
 <div class="card-container" *ngIf="sessionsExist && !unfoldAddSession">
   <div class="col card-group" *ngFor="let session of sessions; index as i">
     <div class="card shadow-sm bg-dark">
-      <div class="row">
+      <div class="row upper">
         <div class="col">{{ sessions[i].date }}</div>
         <div class="col">{{ sessions[i].time }}</div>
-        <div class="col-5">{{ sessions[i].place }}</div>
+        <div class="col">{{ sessions[i].place }}</div>
+        <div class="col right">
+          <button
+            class="btn-collapse bg-dark"
+            (click)="cardUnfolded[i] = !cardUnfolded[i]"
+          >
+            <fa-icon
+              [icon]="faAngleDown"
+              class="faAngleDown"
+              *ngIf="!cardUnfolded[i]"
+            ></fa-icon>
+            <fa-icon
+              [icon]="faAngleUp"
+              class="faAngleUp"
+              *ngIf="cardUnfolded[i]"
+            ></fa-icon>
+          </button>
+        </div>
+      </div>
+      <div class="row" *ngIf="cardUnfolded[i]">
+        <img
+          *ngIf="sessions[i].place == 'Gym'"
+          class="card-image"
+          src="../../../assets/gym-session.png"
+        />
+        <img
+          *ngIf="sessions[i].place == 'Eisenberg'"
+          class="card-image"
+          src="../../../assets/eisenberg-session.png"
+        />
+        <img
+          *ngIf="sessions[i].place == 'Aventura Spielberg'"
+          class="card-image"
+          src="../../../assets/spielberg-session.png"
+        />
+        <div class="card-image-overlay">
+          <p class="card-text">Teilnehmer:</p>
+        </div>
       </div>
     </div>
   </div>

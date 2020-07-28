@@ -1,13 +1,49 @@
-@import '../../styles.scss';
+@import "../../styles.scss";
+
+.container {
+  padding: 3vh 3vw 3vh 3vw;
+}
+
+.vid {
+  width: 320px;
+  height: 180px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 3vh 3vw 3vh 3vw;
+}
+
+video {
+  width: 320px;
+}
 
 .icon {
   height: 30px;
   margin-right: 0.7rem;
 }
 
-.whatsapp-container:hover {
-  background-color: darken($color: white, $amount: 20);
-  width: 100%;
+a {
+  color: black;
 }
 
-  
+.card {
+  text-align: right;
+  border: none;
+  background-image: url("/../../assets/fitness-train.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 250px;
+  .whatsapp {
+    margin: 15px 5px 0 0;
+    opacity: 90%;
+  }
+  .instagram {
+    margin: 125px 5px 0 0;
+    opacity: 90%;
+  }
+  .whatsapp:hover {
+    opacity: 100%;
+  }
+  .instagram:hover {
+    opacity: 100%;
+  }
+}

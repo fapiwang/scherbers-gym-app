@@ -1,29 +1,35 @@
-<h5>Hallo Gymbuddy!</h5>
+<div class="container">
+  <h5>Hallo Gymbuddy!</h5>
 
-<p>
-  <a href="https://www.instagram.com/scherbers_gym_crew/"
-    >@scherbers_gym_crew</a
-  >
-  bei Instagram!
-</p>
+  <div class="vid">
+    <video autoplay>
+      <source src="../../assets/home-video.mp4" type="video/mp4" />
+    </video>
+  </div>
 
-<div class="card" (click)="routerWhatsapp()">
-  <div class="card-header">
+  <h6>Du möchtest mal mittrainieren?</h6>
+  <h6>Spring auf den Fitness-Train auf und schreib uns einfach an.</h6>
+
+  <div class="card shadow-sm">
     <a
       href="https://api.whatsapp.com/send?phone=4917657937429"
       style="text-decoration: none;"
     >
-      <img class="icon" src="assets/whatsapp.svg" />
-      <strong>Scherber's Gym</strong> auf WhatsApp
+      <img
+        class="whatsapp"
+        src="../../assets/whatsapp.png"
+        width="45px"
+        height="45px"
+      />
     </a>
-  </div>
-  <div class="card-body whatsapp-container">
-    <strong>
-      Du hast Fragen
-      <br />
-      oder möchtest mal mittrainieren?
-    </strong>
-    <br /><br />
-    Schreib' uns bei WhatsApp!
+
+    <a href="https://www.instagram.com/scherbers_gym_crew/"
+      ><img
+        class="instagram"
+        src="../../assets/instagram.png"
+        width="45px"
+        height="45px"
+      />
+    </a>
   </div>
 </div>

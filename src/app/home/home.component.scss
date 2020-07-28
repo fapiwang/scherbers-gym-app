@@ -26,24 +26,29 @@ a {
 }
 
 .card {
-  text-align: right;
   border: none;
-  background-image: url("/../../assets/fitness-train.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 300px;
+  width: 340px;
+  background-color: #fff;
+
+  .background-image {
+    position: relative;
+    width: 340px;
+    border-radius: 2px;
+    opacity: 80%;
+  }
+
+  .background-image:hover {
+    opacity: 100%;
+  }
+
   .whatsapp {
-    margin: 15px 5px 0 0;
-    opacity: 90%;
+    position: absolute;
+    top: 5%;
+    right: 4%;
   }
   .instagram {
-    margin: 175px 5px 0 0;
-    opacity: 90%;
-  }
-  .whatsapp:hover {
-    opacity: 100%;
-  }
-  .instagram:hover {
-    opacity: 100%;
+    position: absolute;
+    bottom: 5%;
+    right: 4%;
   }
 }

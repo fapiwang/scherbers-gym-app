@@ -54,6 +54,33 @@
         />
         <div class="card-image-overlay">
           <p class="card-text">Teilnehmer:</p>
+          <a
+            *ngIf="sessions[i].place == 'Gym'"
+            href="https://goo.gl/maps/sGPchY4vhwtZ6pAz5"
+          >
+            <fa-icon
+              [icon]="faMapMarkerAlt"
+              class="faMapMarkerAlt fa-2x"
+            ></fa-icon>
+          </a>
+          <a
+            *ngIf="sessions[i].place == 'Eisenberg'"
+            href="https://goo.gl/maps/exVcfUCfyDJTa9z98"
+          >
+            <fa-icon
+              [icon]="faMapMarkerAlt"
+              class="faMapMarkerAlt fa-2x"
+            ></fa-icon>
+          </a>
+          <a
+            *ngIf="sessions[i].place == 'Aventura Spielberg'"
+            href="https://g.page/Aventura-Spielberg?share"
+          >
+            <fa-icon
+              [icon]="faMapMarkerAlt"
+              class="faMapMarkerAlt fa-2x"
+            ></fa-icon>
+          </a>
         </div>
       </div>
     </div>

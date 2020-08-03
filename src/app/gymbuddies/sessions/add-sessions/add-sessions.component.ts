@@ -58,7 +58,11 @@ export class AddSessionsComponent implements OnInit {
       alert("Bitte wähle einen Ort aus.");
     } else {
       this.newSession = new Session(
-        this.selectedDate.toLocaleDateString(),
+        this.selectedDate.toLocaleDateString("de-DE", {
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        }),
         this.selectedTime,
         this.selectedPlace
       );

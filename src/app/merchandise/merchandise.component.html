@@ -2,10 +2,13 @@
 
 <div *ngIf="orderMode" class="container">
   <h6>Deine Bestellung</h6>
-  <p>Du möchtest Artikel X in Größe {{ selectedSize }} bestellen?</p>
   <p>
-    Dann überweise Z Euro mit dem Verwendungszweck "Vorname Nachname, X, Y" an
-    das folgende Konto und gib' über den Button unten deine Bestellung ab.
+    Du möchtest {{ selectedArticle }} in Größe {{ selectedSize }} bestellen?
+  </p>
+  <p>
+    Dann überweise {{ selectedPrice }} Euro mit dem Verwendungszweck "Vorname
+    Nachname, {{ selectedArticle }}, {{ selectedSize }}" an das folgende Konto
+    und gib' über den Button unten deine Bestellung ab.
   </p>
   <p>Empfänger: Rico Battefeld</p>
   <p>BIC: GENODEF1KBW</p>
@@ -19,5 +22,7 @@
 
 <app-merch-articles
   *ngIf="!orderMode"
+  (orderArticle)="onOrderArticle($event)"
   (orderSize)="onOrderSize($event)"
+  (orderPrice)="onOrderPrice($event)"
 ></app-merch-articles>

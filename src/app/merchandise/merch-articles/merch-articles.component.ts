@@ -11,7 +11,9 @@ interface Sizes {
   styleUrls: ["./merch-articles.component.scss"],
 })
 export class MerchArticlesComponent implements OnInit {
+  @Output() orderArticle: EventEmitter<any> = new EventEmitter();
   @Output() orderSize: EventEmitter<any> = new EventEmitter();
+  @Output() orderPrice: EventEmitter<any> = new EventEmitter();
 
   merchArticles: string[] = ["Hoody", "Cap", "Shirt"];
   prices: string[] = ["45€", "25€", "30€"];
@@ -29,8 +31,9 @@ export class MerchArticlesComponent implements OnInit {
     { id: "xl", viewValue: "XL" },
   ];
 
-  selectedSize = "";
   selectedArticle = "";
+  selectedSize = "";
+  selectedPrice = "";
   validInput: boolean[] = new Array(this.articleImages.length);
   articleIndex: number;
 
@@ -61,7 +64,11 @@ export class MerchArticlesComponent implements OnInit {
   }
 
   goToOrder() {
+    this.selectedArticle = this.merchArticles[this.articleIndex];
+    this.selectedPrice = this.prices[this.articleIndex];
+    this.orderArticle.emit(this.selectedArticle);
     this.orderSize.emit(this.selectedSize);
+    this.orderPrice.emit(this.selectedPrice);
   }
 
   constructor() {}

@@ -4,6 +4,7 @@ import { Session } from "./session.model";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
+import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: "app-sessions",
@@ -15,6 +16,7 @@ export class SessionsComponent implements OnInit {
   faPlusCircle = faPlusCircle;
   faAngleDown = faAngleDown;
   faAngleUp = faAngleUp;
+  faMapMarkerAlt = faMapMarkerAlt;
 
   unfoldAddSession: boolean = false;
   sessionsExist: boolean = false;

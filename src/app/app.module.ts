@@ -10,6 +10,8 @@ import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatNativeDateModule } from "@angular/material";
 import { MatSelectModule } from "@angular/material/select";
 
+import { AmplifyUIAngularModule } from "@aws-amplify/ui-angular";
+
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
@@ -45,6 +47,7 @@ import { MerchArticlesComponent } from "./merchandise/merch-articles/merch-artic
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
+    AmplifyUIAngularModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

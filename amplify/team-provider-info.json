@@ -1,0 +1,23 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-scherbersgymapp-dev-104740-authRole",
+            "UnauthRoleArn": "arn:aws:iam::866896492877:role/amplify-scherbersgymapp-dev-104740-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::866896492877:role/amplify-scherbersgymapp-dev-104740-authRole",
+            "Region": "eu-central-1",
+            "DeploymentBucketName": "amplify-scherbersgymapp-dev-104740-deployment",
+            "UnauthRoleName": "amplify-scherbersgymapp-dev-104740-unauthRole",
+            "StackName": "amplify-scherbersgymapp-dev-104740",
+            "StackId": "arn:aws:cloudformation:eu-central-1:866896492877:stack/amplify-scherbersgymapp-dev-104740/7c9f2b20-e12f-11ea-b1e5-025bd1eb3930",
+            "AmplifyAppId": "d1rps0y6pltbw4"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d1rps0y6pltbw4",
+                    "type": "manual"
+                }
+            }
+        }
+    }
+}

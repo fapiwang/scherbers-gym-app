@@ -1,15 +1,15 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: "app-merchandise",
-  templateUrl: "./merchandise.component.html",
-  styleUrls: ["./merchandise.component.scss"],
+  selector: 'app-merchandise',
+  templateUrl: './merchandise.component.html',
+  styleUrls: ['./merchandise.component.scss'],
 })
 export class MerchandiseComponent implements OnInit {
-  selectedArticle: string = "";
-  selectedSize: string = "";
-  selectedPrice: string = "";
-  orderMode: boolean = false;
+  selectedArticle = '';
+  selectedSize = '';
+  selectedPrice = '';
+  orderMode = false;
 
   onOrderArticle(event) {
     this.selectedArticle = event;
@@ -30,7 +30,7 @@ export class MerchandiseComponent implements OnInit {
     this.orderMode = false;
   }
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

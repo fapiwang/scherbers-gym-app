@@ -1,20 +1,20 @@
-import { Component, OnInit } from "@angular/core";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { Component, OnInit } from '@angular/core';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
-  selector: "app-home",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.scss"],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
   faInstagram = faInstagram;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   routerWhatsapp() {
     document.location.href =
-      "https://api.whatsapp.com/send?phone=4917657937429";
+      'https://api.whatsapp.com/send?phone=4917657937429';
   }
 }

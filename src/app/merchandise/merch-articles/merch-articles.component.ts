@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 interface Sizes {
   id: string;
@@ -6,34 +6,34 @@ interface Sizes {
 }
 
 @Component({
-  selector: "app-merch-articles",
-  templateUrl: "./merch-articles.component.html",
-  styleUrls: ["./merch-articles.component.scss"],
+  selector: 'app-merch-articles',
+  templateUrl: './merch-articles.component.html',
+  styleUrls: ['./merch-articles.component.scss'],
 })
 export class MerchArticlesComponent implements OnInit {
   @Output() orderArticle: EventEmitter<any> = new EventEmitter();
   @Output() orderSize: EventEmitter<any> = new EventEmitter();
   @Output() orderPrice: EventEmitter<any> = new EventEmitter();
 
-  merchArticles: string[] = ["Hoody", "Cap", "Shirt"];
-  prices: string[] = ["45€", "25€", "30€"];
+  merchArticles: string[] = ['Hoody', 'Cap', 'Shirt'];
+  prices: string[] = ['45€', '25€', '30€'];
 
   articleImages: string[] = [
-    "../../../assets/hoody.png",
-    "../../../assets/cap.png",
-    "../../../assets/shirt.png",
+    '../../../assets/hoody.png',
+    '../../../assets/cap.png',
+    '../../../assets/shirt.png',
   ];
 
   sizes: Sizes[] = [
-    { id: "s", viewValue: "S" },
-    { id: "m", viewValue: "M" },
-    { id: "l", viewValue: "L" },
-    { id: "xl", viewValue: "XL" },
+    { id: 's', viewValue: 'S' },
+    { id: 'm', viewValue: 'M' },
+    { id: 'l', viewValue: 'L' },
+    { id: 'xl', viewValue: 'XL' },
   ];
 
-  selectedArticle = "";
-  selectedSize = "";
-  selectedPrice = "";
+  selectedArticle = '';
+  selectedSize = '';
+  selectedPrice = '';
   validInput: boolean[] = new Array(this.articleImages.length);
   articleIndex: number;
 
@@ -46,19 +46,19 @@ export class MerchArticlesComponent implements OnInit {
   }
 
   changeSize(data) {
-    if (data === "s") {
-      this.selectedSize = "S";
+    if (data === 's') {
+      this.selectedSize = 'S';
     }
-    if (data === "m") {
-      this.selectedSize = "M";
+    if (data === 'm') {
+      this.selectedSize = 'M';
     }
-    if (data === "l") {
-      this.selectedSize = "L";
+    if (data === 'l') {
+      this.selectedSize = 'L';
     }
-    if (data === "xl") {
-      this.selectedSize = "XL";
+    if (data === 'xl') {
+      this.selectedSize = 'XL';
     }
-    if (this.selectedSize != "") {
+    if (this.selectedSize !== '') {
       this.validInput[this.articleIndex] = true;
     }
   }
@@ -71,7 +71,7 @@ export class MerchArticlesComponent implements OnInit {
     this.orderPrice.emit(this.selectedPrice);
   }
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

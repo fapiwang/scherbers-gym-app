@@ -66,7 +66,10 @@
               "@aws-sdk/eventstream-serde-config-resolver",
               "ulid",
               "zen-push",
-              "lodash"
+              "lodash",
+              "url",
+              "punycode",
+              "querystring"
             ],
             "outputPath": "dist/scherbers-gym-app",
             "index": "src/index.html",

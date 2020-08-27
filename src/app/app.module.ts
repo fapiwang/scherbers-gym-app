@@ -11,6 +11,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 
 import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
+import Amplify from 'aws-amplify';
+import awsconfig from '../aws-exports';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +24,8 @@ import { SessionsComponent } from './gymbuddies/sessions/sessions.component';
 import { AddSessionsComponent } from './gymbuddies/sessions/add-sessions/add-sessions.component';
 import { EditSessionsComponent } from './gymbuddies/sessions/edit-sessions/edit-sessions.component';
 import { MerchArticlesComponent } from './merchandise/merch-articles/merch-articles.component';
+
+Amplify.configure(awsconfig);
 
 @NgModule({
   declarations: [

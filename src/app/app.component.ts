@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
+import { onAuthUIStateChange, CognitoUserInterface, AuthState } from '@aws-amplify/ui-components';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,24 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'scherbers-gym-app';
+  user: CognitoUserInterface | undefined;
+  authState: AuthState;
 
   isMenuOpen = false;
+
+  constructor(private ref: ChangeDetectorRef) { }
+
+  ngOnInit() {
+    onAuthUIStateChange((authState, authData) => {
+      this.authState = authState;
+      this.user = authData as CognitoUserInterface;
+      this.ref.detectChanges();
+    })
+  }
+
+  ngOnDestroy() {
+    return onAuthUIStateChange;
+  }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;

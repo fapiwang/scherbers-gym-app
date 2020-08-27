@@ -1,4 +1,12 @@
-<header>
+<amplify-authenticator *ngIf="authState !== 'signedin'"></amplify-authenticator>
+
+<div *ngIf="authState === 'signedin' && user" class="App">
+  <amplify-sign-out></amplify-sign-out>
+  <div>Hello, {{user.username}}</div>
+  <!-- This is where you application template code goes -->
+</div>
+
+<header *ngIf="authState === 'signedin'">
   <div class="pos-f-t">
     <nav class="navbar navbar-dark bg-dark">
       <button class="navbar-toggler" type="button" (click)="toggleMenu()">
@@ -8,60 +16,30 @@
       <img src="../../assets/logo-inverted.PNG" height="50" alt="" />
     </nav>
   </div>
-  <div
-    class="overlay-content"
-    [ngClass]="isMenuOpen ? 'unfoldMenu' : 'foldMenu'"
-  >
-    <img
-      src="../assets/menu-background.png"
-      class="hamburger-menu-background"
-    />
+  <div class="overlay-content" [ngClass]="isMenuOpen ? 'unfoldMenu' : 'foldMenu'">
+    <img src="../assets/menu-background.png" class="hamburger-menu-background" />
     <div class="p-4 menu-text">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLink="/"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            (click)="toggleMenu()"
-            >Home<span class="sr-only">(current)</span></a
-          >
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+            (click)="toggleMenu()">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLink="/gymbuddies"
-            routerLinkActive="active"
-            (click)="toggleMenu()"
-            >Gymbuddies</a
-          >
+          <a class="nav-link" routerLink="/gymbuddies" routerLinkActive="active" (click)="toggleMenu()">Gymbuddies</a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLink="/plans"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            (click)="toggleMenu()"
-            >Trainingsplan</a
-          >
+          <a class="nav-link" routerLink="/plans" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+            (click)="toggleMenu()">Trainingsplan</a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLink="/merchandise"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            (click)="toggleMenu()"
-            >Merchandise</a
-          >
+          <a class="nav-link" routerLink="/merchandise" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }" (click)="toggleMenu()">Merchandise</a>
         </li>
       </ul>
     </div>
   </div>
 </header>
 
-<main *ngIf="!isMenuOpen">
+<main *ngIf="!isMenuOpen && authState === 'signedin' && user">
   <router-outlet></router-outlet>
 </main>

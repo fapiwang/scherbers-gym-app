@@ -69,7 +69,8 @@
               "lodash",
               "url",
               "punycode",
-              "querystring"
+              "querystring",
+              "@aws-amplify/auth"
             ],
             "outputPath": "dist/scherbers-gym-app",
             "index": "src/index.html",
